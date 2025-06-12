@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SMA Negeri 1 Bengkulu Tengah</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+   <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script> 
+
+   <style>
+    [x-cloak] { display: none !important; }
+
+    @media (max-width: 767px) {
+      .geser-kanan-mobile {
+        margin-left: 3rem;
+      }
+      .naikkan-banner-mobile {
+        padding-top: 120px !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <nav class="bg-blue-700 text-white fixed top-0 left-0 w-full z-50 shadow" x-data="{ mobileOpen: false }">
+    <div class="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between px-4 py-2">
+      
+      <!-- Logo SMA -->
+      <div class="flex items-center space-x-3">
+        <img src="logo sma.png" alt="Logo SMA" class="h-12 w-12 object-contain" />
+        <div class="leading-tight">
+          <p class="text-lg font-bold">SMA Negeri 1 Bengkulu Tengah</p>
+          <p class="text-sm">Official Website</p>
+        </div>
+      </div>
+
+      <!-- Logo GLO + Menu -->
+      <div class="flex items-center space-x-4 mt-2 md:mt-0 lg:-ml-16 w-full md:w-auto">
+
+        <!-- Logo GLO -->
+        <a href="berita.html">
+          <img src="Glo.png" alt="Glo" class="h-12 object-contain" />
+        </a>
+
+        <!-- Hamburger button - mobile only -->
+        <button @click="mobileOpen = !mobileOpen" class="md:hidden focus:outline-none">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex space-x-4 text-sm">
+          <li class="relative" x-data="{ open: false }">
+            <a href="#" @click.prevent="open = !open" class="cursor-pointer flex items-center">
+              PROFIL
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+            <ul x-show="open" @click.away="open = false" x-cloak x-transition
+              class="absolute bg-white text-black mt-2 rounded shadow w-48 z-50">
+              <li><a href="sejarah.html" class="block px-4 py-2 hover:bg-gray-200">Sejarah Sekolah</a></li>
+              <li><a href="sarana-prasarana.html" class="block px-4 py-2 hover:bg-gray-200">Sarana Prasarana</a></li>
+              <li><a href="prestasi_sekolah.html" class="block px-4 py-2 hover:bg-gray-200">Prestasi Sekolah</a></li>
+              <li><a href="Ekstrakurikuler.html" class="block px-4 py-2 hover:bg-gray-200">Ekstrakurikuler</a></li>
+            </ul>
+          </li>
+          <li><a href="sambutan.html" class="hover:underline">SAMBUTAN KEPALA SEKOLAH</a></li>
+          <li><a href="struktur-organisasi.html" class="hover:underline">STRUKTUR ORGANISASI</a></li>
+          <li><a href="visi-misi.html" class="hover:underline">VISI MISI</a></li>
+          <li><a href="galeri-kegiatan.html" class="hover:underline">GALERI KEGIATAN</a></li>
+          <li><a href="berita.html" class="hover:underline">BERITA</a></li>
+        </ul>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div x-show="mobileOpen" x-cloak x-transition class="md:hidden w-full bg-blue-600 mt-2 rounded shadow text-sm">
+        <ul class="text-white px-4 py-2 space-y-2">
+          <li><a href="sejarah.html" class="block hover:underline">Sejarah Sekolah</a></li>
+          <li><a href="sarana-prasarana.html" class="block hover:underline">Sarana Prasarana</a></li>
+          <li><a href="prestasi_sekolah.html" class="block hover:underline">Prestasi Sekolah</a></li>
+          <li><a href="Ekstrakurikuler.html" class="block hover:underline">Ekstrakurikuler</a></li>
+          <li><a href="sambutan.html" class="block hover:underline">Sambutan Kepala Sekolah</a></li>
+          <li><a href="struktur-organisasi.html" class="block hover:underline">Struktur Organisasi</a></li>
+          <li><a href="visi-misi.html" class="block hover:underline">Visi Misi</a></li>
+          <li><a href="galeri-kegiatan.html" class="block hover:underline">Galeri Kegiatan</a></li>
+          <li><a href="berita.html" class="block hover:underline">Berita</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+ <section class="pt-[80px] md:pt-[100px] lg:pt-[64px] bg-white naikkan-banner-mobile">
+  <img src="banner.png" alt="Banner" class="w-full h-auto object-cover">
+</section>
+
+
+
+    <!-- Section Artikel Observasi Guru -->
+  <section class="bg-blue-900 py-12 px-4">
+  <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up">
+
+    <img src="gambar1.jpg" alt="Observasi Guru" class="w-full h-auto rounded-lg mb-4">
+
+      <h2 class="text-2xl font-bold text-gray-800 mb-2">Observasi Guru: Evaluasi dan Peningkatan Kualitas Pengajaran di SMA Negeri 1 Bengkulu Tengah</h2>
+      <p class="text-sm text-gray-500 mb-4">November 8, 2024 | Admin</p>
+      <p class="text-gray-700 mb-4">
+        Observasi guru menjadi salah satu metode penting dalam dunia pendidikan untuk mengevaluasi kinerja pengajaran serta meningkatkan kualitas pembelajaran di sekolah. Melalui proses ini, kepala sekolah atau rekan sejawat dapat mengamati langsung cara mengajar guru di kelas, teknik yang digunakan, serta interaksi dengan siswa.
+      </p>
+      <p class="text-gray-700 mb-4">
+        Dalam observasi yang dilakukan baru-baru ini di SMA Negeri 1 Bengkulu Tengah, sejumlah guru dinilai dalam hal keefektifan mengelola kelas, penggunaan metode pengajaran yang inovatif, serta kemampuan berkomunikasi dengan siswa.
+      </p>
+      <p class="text-gray-700 mb-4">
+        Observasi kali ini bertujuan untuk memberikan umpan balik konstruktif yang dapat membantu guru dalam mengembangkan keterampilan mengajarnya.
+      </p>
+      <p class="text-gray-700 mb-4">
+        Kepala Sekolah Ibu Puji Hartati, M.Pd.Mat. mengatakan bahwa observasi guru tidak hanya berfokus pada penilaian, tetapi juga untuk mendukung pengembangan profesionalisme para pendidik. “Dengan observasi yang dilakukan secara rutin, kami dapat mengidentifikasi area yang perlu diperbaiki dan memberikan pelatihan yang lebih terfokus sesuai dengan kebutuhan masing-masing guru,” ujarnya.
+      </p>
+      <p class="text-gray-700 mb-4">
+        Sejumlah guru yang telah menjalani observasi merasa kegiatan ini memberi dampak positif.
+      </p>
+      <p class="text-gray-700 mb-4">
+        Observasi guru juga menjadi bagian penting dalam upaya meningkatkan kualitas pendidikan secara keseluruhan. Berdasarkan penelitian, pembinaan yang berkelanjutan melalui observasi dan umpan balik dapat membantu guru untuk terus berkembang dan berinovasi dalam pendekatan pengajaran mereka.
+      </p>
+      <p class="text-gray-700 mb-4">
+        Selain itu, observasi juga membantu memastikan bahwa proses pembelajaran tetap efektif dan sesuai dengan standar kurikulum yang ditetapkan. Oleh karena itu, banyak sekolah mulai memanfaatkan observasi sebagai salah satu alat untuk mencapai tujuan pendidikan yang lebih baik.
+      </p>
+      <p class="text-gray-700">
+        Melalui observasi yang rutin dan sistematis, diharapkan kualitas pendidikan di Indonesia dapat terus meningkat, memberikan dampak positif bagi masa depan generasi muda.
+      </p>
+    </div>
+  </section>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <script>
+  AOS.init({
+    once: false,
+    mirror: false,  // <-- ubah jadi false biar sembunyi lagi saat discroll ke atas
+    duration: 800,
+    easing: 'ease-in-out',
+    offset: 200 // Tambahan: animasi dimulai setelah 200px masuk viewport
+  });
+</script>
+
+<style>
+  [data-aos] {
+    opacity: 0;
+    transition-property: opacity, transform;
+  }
+
+  [data-aos].aos-animate {
+    opacity: 1;
+  }
+</style>
+
+
+</body>
+</html>

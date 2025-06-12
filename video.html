@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SMA Negeri 1 Bengkulu Tengah</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+
+</head>
+<body class="bg-white">
+
+<!-- Navbar -->
+<nav class="bg-blue-700 text-white p-2 flex justify-between items-center fixed top-0 left-0 w-full z-50">
+  <div class="flex items-center space-x-2 ml-4">
+    <img src="logo sma.png" alt="Logo" style="height: 55px; width: 55px;">
+    <div class="flex flex-col">
+      <p class="text-[20px] font-bold">SMA Negeri 1 Bengkulu Tengah</p>
+      <p class="text-[15px]">Official Website</p>
+    </div>
+  </div>
+    <ul class="flex items-center ml-[-80px] space-x-4">
+  
+    <li>
+      <a href="berita.html" class="flex items-center hover:underline">
+        <img src="Glo.png" alt="Home" class="w-auto object-contain" style="height: 55px;">
+      </a>
+    </li>
+      <!-- Dropdown Menu -->
+  <li class="relative group">
+    <a class="text-sm leading-8 cursor-pointer block">PROFIL</a>
+    <ul class="absolute hidden group-hover:block bg-white text-black rounded shadow-lg top-full left-0">
+      <li><a href="sejarah.html" class="block px-4 py-2 hover:bg-gray-200">Sejarah Sekolah</a></li>
+      <li><a href="sarana-prasarana.html" class="block px-4 py-2 hover:bg-gray-200">Sarana Prasarana</a></li>
+      <li><a href="prestasi_sekolah.html" class="block px-4 py-2 hover:bg-gray-200">Prestasi Sekolah</a></li>
+      <li><a href="Ekstrakurikuler.html" class="block px-4 py-2 hover:bg-gray-200">Ekstrakurikuler</a></li>
+    </ul>
+  </li>
+    <li><a href="sambutan.html" class="hover:underline text-sm leading-8">SAMBUTAN KEPALA SEKOLAH</a></li>
+    <li><a href="struktur-organisasi.html" class="hover:underline text-sm leading-8">STRUKTUR ORGANISASI</a></li>
+    <li><a href="visi-misi.html" class="hover:underline text-sm leading-8">VISI MISI</a></li>
+    <li><a href="galeri-kegiatan.html" class="hover:underline text-sm leading-8">GALERI KEGIATAN</a></li>
+    <li><a href="berita.html" class="hover:underline text-sm leading-8">BERITA</a></li>
+  </ul>
+</nav>
+
+<!-- Banner -->
+<section class="bg-white pt-16">
+  <img src="banner.png" alt="Banner" class="w-screen h-auto object-cover">
+</section>
+
+<!-- Galeri Kegiatan Video -->
+<section class="bg-blue-900 text-white py-10">
+  <div class="container mx-auto px-4">
+
+   <!-- Header -->
+<div class="scroll-trigger flex flex-col items-center gap-4 mb-10">
+  <h2 class="text-3xl font-bold text-white">VIDEO KEGIATAN SEKOLAH</h2>
+  <p class="text-white text-center max-w-2xl">
+    Berisi kumpulan video dokumentasi kegiatan SMA Negeri 1 Bengkulu Tengah, mulai dari acara
+    formal seperti upacara peringatan hingga momen kreatif siswa dalam berbagai event.
+  </p>
+</div>
+
+    <!-- Tabs -->
+    <div class="flex flex-col items-center gap-4 mb-10 scroll-trigger">
+      <a href="galeri-kegiatan.html" class="text-xl font-semibold text-white hover:scale-105 transition duration-300">
+        Kegiatan Akademik
+      </a>
+      <a href="video.html" class="text-xl font-semibold text-white hover:scale-105 transition duration-300">
+        Video
+      </a>
+    </div>
+
+    <!-- Wrapper Card Video -->
+    <div class="flex flex-wrap justify-center gap-6">
+
+      <!-- Card 1 -->
+      <div class="scroll-trigger bg-white text-gray-800 rounded shadow-lg overflow-hidden w-full max-w-sm transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+        <div class="w-full h-[200px]">
+      <iframe class="w-full h-full video-frame" src="https://www.youtube.com/embed/Q2xi4BuGQRA" title="Video 1" frameborder="0" allowfullscreen></iframe>
+
+        </div>
+        <div class="p-4">
+          <h3 class="font-semibold text-lg">Upacara Peringatan Hari Pahlawan 2024</h3>
+          <p class="text-sm mt-2">Upacara untuk mengenang dan menghormati jasa para pahlawan bangsa.</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="scroll-trigger bg-white text-gray-800 rounded shadow-lg overflow-hidden w-full max-w-sm transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+        <div class="w-full h-[200px]">
+          <iframe class="w-full h-full" src="https://www.youtube.com/embed/pTdmvjdLkGI" title="Video 2" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="p-4">
+          <h3 class="font-semibold text-lg">SMANSA BT EXPO TAHUN 2024</h3>
+          <p class="text-sm mt-2">Pameran tahunan yang menampilkan kreativitas dan prestasi siswa SMA Negeri 1 Bengkulu Tengah.</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="scroll-trigger bg-white text-gray-800 rounded shadow-lg overflow-hidden w-full max-w-sm transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+        <div class="w-full h-[200px]">
+          <iframe class="w-full h-full" src="https://www.youtube.com/embed/lPhisr_iCB4" title="Video 3" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="p-4">
+          <h3 class="font-semibold text-lg">Kegiatan ASA SBK 2025</h3>
+          <p class="text-sm mt-2">Aktivitas seni budaya dan keterampilan yang digelar sebagai bagian dari program ASA SBK tahun 2025.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <script>
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-slide-up');
+          entry.target.classList.remove('opacity-0');
+        } else {
+          entry.target.classList.remove('animate-slide-up');
+          entry.target.classList.add('opacity-0');
+        }
+      });
+    },
+    {
+      threshold: 0.1
+    }
+  );
+
+  document.querySelectorAll('.scroll-trigger').forEach(el => {
+    el.classList.add('opacity-0');
+    observer.observe(el);
+  });
+</script>
+
+<style>
+  @keyframes slide-up {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out forwards;
+  }
+</style>
+
+</body>
+</html>

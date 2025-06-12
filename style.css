@@ -1,0 +1,14 @@
+<!-- CSS tambahan untuk memperbesar kotak background -->
+  <style>
+    section.bg-white {
+      width: 100%; /* Memastikan lebar background kotak mengisi penuh */
+      height: auto; /* Membuat tinggi otomatis tergantung isi */
+      padding-left: 20px; /* Menambah padding kiri */
+      padding-right: 20px; /* Menambah padding kanan */
+      background-color: white; /* Menjaga warna latar belakang tetap putih */
+    }
+  
+    .container {
+      width: 100%; /* Memastikan kontainer juga lebar penuh */
+    }
+  </style>

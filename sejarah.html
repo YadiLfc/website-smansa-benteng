@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SMA Negeri 1 Bengkulu Tengah</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+   <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script> 
+  <style>
+    
+    [x-cloak] { display: none !important; }
+
+    @media (max-width: 767px) {
+      .geser-kanan-mobile {
+        margin-left: 3rem;
+      }
+      .naikkan-banner-mobile {
+        padding-top: 120px !important;
+      }
+    }
+    body {
+      scroll-behavior: smooth;
+    }
+
+    /* Animasi slide */
+    @keyframes slideIn {
+      0% {
+        transform: translateX(100%); /* Mulai dari kanan */
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0); /* Bergerak ke posisi semula */
+        opacity: 1;
+      }
+    }
+
+    .animate-slideIn {
+      animation: slideIn 0.8s ease-in-out forwards;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <nav class="bg-blue-700 text-white fixed top-0 left-0 w-full z-50 shadow" x-data="{ mobileOpen: false }">
+    <div class="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between px-4 py-2">
+      
+      <!-- Logo SMA -->
+      <div class="flex items-center space-x-3">
+        <img src="logo sma.png" alt="Logo SMA" class="h-12 w-12 object-contain" />
+        <div class="leading-tight">
+          <p class="text-lg font-bold">SMA Negeri 1 Bengkulu Tengah</p>
+          <p class="text-sm">Official Website</p>
+        </div>
+      </div>
+
+      <!-- Logo GLO + Menu -->
+      <div class="flex items-center space-x-4 mt-2 md:mt-0 lg:-ml-16 w-full md:w-auto">
+
+        <!-- Logo GLO -->
+        <a href="berita.html">
+          <img src="Glo.png" alt="Glo" class="h-12 object-contain" />
+        </a>
+
+        <!-- Hamburger button - mobile only -->
+        <button @click="mobileOpen = !mobileOpen" class="md:hidden focus:outline-none">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex space-x-4 text-sm">
+          <li class="relative" x-data="{ open: false }">
+            <a href="#" @click.prevent="open = !open" class="cursor-pointer flex items-center">
+              PROFIL
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+            <ul x-show="open" @click.away="open = false" x-cloak x-transition
+              class="absolute bg-white text-black mt-2 rounded shadow w-48 z-50">
+              <li><a href="sejarah.html" class="block px-4 py-2 hover:bg-gray-200">Sejarah Sekolah</a></li>
+              <li><a href="sarana-prasarana.html" class="block px-4 py-2 hover:bg-gray-200">Sarana Prasarana</a></li>
+              <li><a href="prestasi_sekolah.html" class="block px-4 py-2 hover:bg-gray-200">Prestasi Sekolah</a></li>
+              <li><a href="Ekstrakurikuler.html" class="block px-4 py-2 hover:bg-gray-200">Ekstrakurikuler</a></li>
+            </ul>
+          </li>
+          <li><a href="sambutan.html" class="hover:underline">SAMBUTAN KEPALA SEKOLAH</a></li>
+          <li><a href="struktur-organisasi.html" class="hover:underline">STRUKTUR ORGANISASI</a></li>
+          <li><a href="visi-misi.html" class="hover:underline">VISI MISI</a></li>
+          <li><a href="galeri-kegiatan.html" class="hover:underline">GALERI KEGIATAN</a></li>
+          <li><a href="berita.html" class="hover:underline">BERITA</a></li>
+        </ul>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div x-show="mobileOpen" x-cloak x-transition class="md:hidden w-full bg-blue-600 mt-2 rounded shadow text-sm">
+        <ul class="text-white px-4 py-2 space-y-2">
+          <li><a href="sejarah.html" class="block hover:underline">Sejarah Sekolah</a></li>
+          <li><a href="sarana-prasarana.html" class="block hover:underline">Sarana Prasarana</a></li>
+          <li><a href="prestasi_sekolah.html" class="block hover:underline">Prestasi Sekolah</a></li>
+          <li><a href="Ekstrakurikuler.html" class="block hover:underline">Ekstrakurikuler</a></li>
+          <li><a href="sambutan.html" class="block hover:underline">Sambutan Kepala Sekolah</a></li>
+          <li><a href="struktur-organisasi.html" class="block hover:underline">Struktur Organisasi</a></li>
+          <li><a href="visi-misi.html" class="block hover:underline">Visi Misi</a></li>
+          <li><a href="galeri-kegiatan.html" class="block hover:underline">Galeri Kegiatan</a></li>
+          <li><a href="berita.html" class="block hover:underline">Berita</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+ <section class="pt-[80px] md:pt-[100px] lg:pt-[64px] bg-white naikkan-banner-mobile">
+  <img src="banner.png" alt="Banner" class="w-full h-auto object-cover">
+</section>
+  <!-- Section Visi Misi dengan Background Biru -->
+ <section class="bg-blue-900 text-white py-12 mt-0">
+
+    <div class="max-w-5xl mx-auto px-4" data-aos="fade-down" data-aos-duration="1000" data-aos-once="false">
+    <h2 class="text-4xl font-bold mb-2 text-center">SEJARAH SEKOLAH</h2>
+    <h3 class="text-xl mb-4 text-center">SMA Negeri 1 Bengkulu Tengah</h3>
+    <p class="text-center max-w-2xl mx-auto mb-10">
+     Halaman ini menjelaskan secara singkat tentang sejarah SMA Negeri 1 Bengkulu Tengah, mulai dari 
+     awal pendiriannya hingga perkembangan yang telah dicapai dalam mendukung kemajuan pendidikan di 
+     wilayah sekitarnya.
+    </p>
+
+
+      <div class="bg-white text-black rounded-2xl p-8" data-aos="fade-up" data-aos-duration="1000" data-aos-once="false">
+       
+        
+       <h1 class="text-2xl font-bold mb-4">Sejarah</h1>
+        <div class="text-justify">
+          <p class="text-lg mb-4"><b>SMA NEGERI 1 BENGKULU TENGAH:</b> Menempa Generasi Sejak 1991</p>
+          <p class="text-lg mb-4">Di jantung KABUPATEN BENGKULU TENGAH, berdiri kokoh SMA NEGERI 1 BENGKULU
+                                  TENGAH, menyapa pagi dengan semangat para penerus bangsa. Sejak tahun 1991,
+                                  gerbangnya terbuka lebar, menyambut generasi demi generasi untuk ditempa menjadi 
+                                  tunas-tunas harapan.</p>          
+          <p class="text-lg mb-4">Berawal dari mimpi sederhana sekelompok cendekiawan, SMA NEGERI 1 BENGKULU TENGAH 
+                                  didirikan dengan tekad mulia: mencerdaskan kehidupan bangsa. Gedungnya yang 
+                                  sederhana tak menyurutkan semangat para pengajar dan murid. Di bawah naungan pohon beringin 
+                                  tua, ilmu pengetahuan mengalir bagai air, menyiram jiwa-jiwa muda yang haus akan pengetahuan.</p>
+                  <p class="text-lg mb-4">Tahun demi tahun, SMA NEGERI 1 BENGKULU TENGAH menorehkan prestasi demi 
+                    prestasi. Siswa-siswinya tak hanya unggul di bidang akademik, tapi juga aktif dalam berbagai
+                     kegiatan ekstrakurikuler. Lorong-lorong kelasnya dihiasi dengan piala dan penghargaan, menjadi
+                      bukti nyata dedikasi dan kerja keras seluruh civitas akademika.</p>
+                  <p class="text-lg mb-4">Di balik gemerlap prestasi, SMA NEGERI 1 BENGKULU TENGAH tak lupa
+                     menanamkan nilai-nilai kemanusiaan pada murid-muridnya. Rasa cinta tanah air, kepedulian 
+                     terhadap sesama, dan semangat gotong royong menjadi fondasi utama dalam proses belajar 
+                     mengajar. Tak heran, banyak alumni SMA NEGERI 1 BENGKULU TENGAH yang menjadi tokoh-tokoh 
+                     inspiratif di bidangnya masing-masing.</p>
+                  <p class="text-lg mb-4">Di usianya yang ke-33, SMA NEGERI 1 BENGKULU TENGAH terus melangkah maju.
+                     Gedungnya yang dulu sederhana kini telah berganti dengan bangunan modern yang megah. 
+                     Fasilitasnya pun semakin lengkap, menunjang proses belajar mengajar yang semakin berkualitas.</p>
+                  <p class="text-lg mb-4">Namun, di tengah kemajuan zaman, SMA NEGERI 1 BENGKULU TENGAH tak pernah
+                     melupakan jati dirinya. Semangat juang para pendirinya masih tertanam kuat dalam sanubari para 
+                     guru dan murid. Mereka terus berkarya, mendidik generasi muda dengan penuh cinta dan dedikasi, 
+                     demi membangun masa depan bangsa yang lebih gemilang.</p>
+                  <p class="text-lg mb-4">SMA NEGERI 1 BENGKULU TENGAH: lebih dari sekadar sekolah, ia adalah rumah
+                     kedua bagi para muridnya. Di sini, mereka belajar, bertumbuh, dan menemukan jati diri mereka. 
+                     Di sini, mereka ditempa menjadi insan berkarakter mulia, siap mengabdikan diri untuk bangsa dan negara.</p>
+                  <p class="text-lg mb-4 font-semibold">Kisah SMA NEGERI 1 BENGKULU TENGAH:</p>
+                  <ul class="list-disc pl-6 text-lg mb-4 space-y-2">
+                    <li>1991: Didirikan oleh sekelompok cendekiawan dengan mimpi mencerdaskan kehidupan bangsa.</li>
+                    <li>Tahun-tahun awal: Berfokus pada membangun fondasi akademik dan menanamkan nilai-nilai 
+                      kemanusiaan.</li>
+                    <li>Masa keemasan: Prestasi demi prestasi diraih, alumni menjadi tokoh-tokoh inspiratif.</li>
+                    <li>Sekarang: Terus maju dengan fasilitas modern dan semangat juang yang tak padam.</li>
+                  </ul>
+                  <p class="text-lg mb-4 font-semibold">Nilai-nilai SMA NEGERI 1 BENGKULU TENGAH:</p>
+                  <ul class="list-disc pl-6 text-lg mb-4 space-y-2">
+                    <li><strong>Cinta tanah air:</strong> Menanamkan rasa bangga dan tanggung jawab terhadap bangsa
+                       dan negara.</li>
+                    <li><strong>Kepedulian terhadap sesama:</strong> Mendidik murid untuk saling tolong menolong 
+                      dan membantu yang membutuhkan.</li>
+                    <li><strong>Semangat gotong royong:</strong> Menumbuhkan rasa kebersamaan dan kerjasama dalam 
+                      mencapai tujuan bersama.</li>
+                  </ul>
+                  <p class="text-lg mb-4 italic">SMA NEGERI 1 BENGKULU TENGAH: Menempa generasi muda berkarakter 
+                    mulia, siap membangun masa depan bangsa yang gemilang.</p>
+    </div>
+  </section>
+
+  <!-- AOS Library JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: false,
+    });
+
+    const observerOptions = {
+      threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const el = entry.target;
+
+        if (entry.isIntersecting) {
+          // Tambahkan kelas animasi
+          el.classList.add('animate-slideIn');
+
+          // Hapus kelas animasi setelah selesai (agar bisa diulang)
+          el.addEventListener('animationend', () => {
+            el.classList.remove('animate-slideIn');
+          }, { once: true }); // hanya jalankan sekali per animasi masuk
+        }
+      });
+    }, observerOptions);
+
+    const sectionDesc = document.getElementById('section-desc');
+    const footer = document.getElementById('footer');
+
+    observer.observe(sectionDesc);
+    observer.observe(footer);
+  </script>
+
+</body>
+</html>

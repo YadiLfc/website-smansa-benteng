@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMA Negeri 1 Bengkulu Tengah</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+@keyframes slide-up {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.8s ease-out forwards;
+}
+</style>
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <nav class="bg-blue-700 text-white p-2 flex justify-between items-center fixed top-0 left-0 w-full z-50">
+    <div class="flex items-center space-x-2 ml-4">
+      <img src="logo sma.png" alt="Logo" style="height: 55px; width: 55px;">
+      <div class="flex flex-col">
+        <p class="text-[20px] font-bold">SMA Negeri 1 Bengkulu Tengah</p>
+    <p class="text-[15px]">Official Website</p>
+      </div>
+      </div>
+      </div>
+    </div>
+    <ul class="flex items-center ml-[-80px] space-x-4">
+ 
+     <!-- Logo -->
+<li>
+  <a href="berita.html" class="flex items-center hover:underline">
+    <img src="Glo.png" alt="Home" class="w-auto object-contain" style="height: 70px;">
+  </a>
+</li>
+    
+     <!-- Dropdown Menu -->
+  <li class="relative group">
+    <a class="text-sm leading-8 cursor-pointer block">PROFIL</a>
+    <ul class="absolute hidden group-hover:block bg-white text-black rounded shadow-lg top-full left-0">
+      
+      <li><a href="sejarah.html" class="block px-4 py-2 hover:bg-gray-200">Sejarah Sekolah</a></li>
+      <li><a href="sarana-prasarana.html" class="block px-4 py-2 hover:bg-gray-200">Sarana Prasarana</a></li>
+      <li><a href="prestasi_sekolah.html" class="block px-4 py-2 hover:bg-gray-200">Prestasi Sekolah</a></li>
+      <li><a href="Ekstrakurikuler.html" class="block px-4 py-2 hover:bg-gray-200">Ekstrakurikuler</a></li>
+    </ul>
+  </li>
+
+     <!-- Menu Items -->
+<li><a href="sambutan.html" class="hover:underline text-sm leading-8">SAMBUTAN KEPALA SEKOLAH</a></li>
+<li><a href="struktur-organisasi.html" class="hover:underline text-sm leading-8">STRUKTUR ORGANISASI</a></li>
+<li><a href="visi-misi.html" class="hover:underline text-sm leading-8">VISI MISI</a></li>
+<li><a href="galeri-kegiatan.html" class="hover:underline text-sm leading-8">GALERI KEGIATAN</a></li>
+<li><a href="berita.html" class="hover:underline text-sm leading-8">BERITA</a></li>
+    </ul>
+</nav>    
+
+  <!-- Banner -->
+<section class="bg-white pt-14">
+  <img src="banner.png" alt="Banner" class="w-screen h-auto object-cover">
+</section>
+
+ <!-- Galeri Kegiatan -->
+<section class="bg-blue-900 text-white py-10">
+  <div class="container mx-auto px-4 text-center">
+   <h2 class="text-3xl font-bold mb-6 opacity-0 scroll-trigger">Galeri Kegiatan Sekolah</h2>
+  <p class="text-white mb-8 max-w-xl mx-auto opacity-0 scroll-trigger">
+  Dokumentasi foto berbagai aktivitas di SMA Negeri 1 Bengkulu Tengah, 
+  mulai dari acara formal hingga kegiatan siswa yang penuh semangat dan kreativitas.
+</p>
+
+    <!-- Tabs -->
+<div class="flex flex-col items-center gap-4 mb-10 opacity-0 scroll-trigger">
+  <a href="kegiatan-akademik.html" 
+     class="text-xl font-semibold text-white hover:scale-105 transition duration-300">
+    Kegiatan Akademik
+  </a>
+  <a href="video.html" 
+     class="text-xl font-semibold text-white hover:scale-105 transition duration-300">
+    Video
+  </a>
+</div>
+
+    <!-- Cards Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-items-center gap-y-10">
+      <!-- Card 1 -->
+      <div class="bg-white text-gray-800 rounded shadow-lg overflow-hidden w-[300px] sm:w-[350px]">
+        <img src="g1.jpeg" alt="Kegiatan 1" class="w-full h-[200px] object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg">SENAM SEHAT</h3>
+          <p class="text-sm mt-2">Kegiatan rutin yang bertujuan untuk menjaga kebugaran fisik dan meningkatkan semangat siswa serta guru melalui gerakan senam bersama di halaman sekolah.</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white text-gray-800 rounded shadow-lg overflow-hidden w-[300px] sm:w-[350px]">
+        <img src="g2.jpeg" alt="Kegiatan 2" class="w-full h-[200px] object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg">KEBERSIHAN LINGKUNGAN KELAS</h3>
+          <p class="text-sm mt-2">Upaya gotong royong siswa dalam menjaga kebersihan dan kerapian ruang kelas serta sekitarnya guna menciptakan lingkungan belajar yang nyaman dan sehat.</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white text-gray-800 rounded shadow-lg overflow-hidden w-[300px] sm:w-[350px]">
+        <img src="g3.jpeg" alt="Kegiatan 3" class="w-full h-[200px] object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg">ASBK 2025</h3>
+          <p class="text-sm mt-2">Pelaksanaan Asesmen Sumatif Berbasis Komputer tahun 2025 yang diikuti oleh seluruh siswa sebagai bagian dari evaluasi pembelajaran berbasis digital di sekolah.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('animate-slide-up'); // reset
+          void entry.target.offsetWidth; // reflow: restart animation
+          entry.target.classList.add('animate-slide-up');
+          entry.target.classList.remove('opacity-0'); // hilangkan transparan
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  document.querySelectorAll('.scroll-trigger').forEach(el => {
+    observer.observe(el);
+  });
+</script>
+                
+</body>
+</html>

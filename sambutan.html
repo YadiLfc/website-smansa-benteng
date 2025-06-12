@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SMA Negeri 1 Bengkulu Tengah</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"> <!-- CSS AOS -->
+  <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script> 
+
+  <style>
+    [x-cloak] { display: none !important; }
+
+    @media (max-width: 767px) {
+      .geser-kanan-mobile {
+        margin-left: 3rem;
+      }
+      .naikkan-banner-mobile {
+        padding-top: 120px !important;
+      }
+    }
+  </style>
+</head>
+
+
+ <body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <nav class="bg-blue-700 text-white fixed top-0 left-0 w-full z-50 shadow" x-data="{ mobileOpen: false }">
+    <div class="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between px-4 py-2">
+      
+      <!-- Logo SMA -->
+      <div class="flex items-center space-x-3">
+        <img src="logo sma.png" alt="Logo SMA" class="h-12 w-12 object-contain" />
+        <div class="leading-tight">
+          <p class="text-lg font-bold">SMA Negeri 1 Bengkulu Tengah</p>
+          <p class="text-sm">Official Website</p>
+        </div>
+      </div>
+
+      <!-- Logo GLO + Menu -->
+      <div class="flex items-center space-x-4 mt-2 md:mt-0 lg:-ml-16 w-full md:w-auto">
+
+        <!-- Logo GLO -->
+        <a href="berita.html">
+          <img src="Glo.png" alt="Glo" class="h-12 object-contain" />
+        </a>
+
+        <!-- Hamburger button - mobile only -->
+        <button @click="mobileOpen = !mobileOpen" class="md:hidden focus:outline-none">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex space-x-4 text-sm">
+          <li class="relative" x-data="{ open: false }">
+            <a href="#" @click.prevent="open = !open" class="cursor-pointer flex items-center">
+              PROFIL
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+            <ul x-show="open" @click.away="open = false" x-cloak x-transition
+              class="absolute bg-white text-black mt-2 rounded shadow w-48 z-50">
+              <li><a href="sejarah.html" class="block px-4 py-2 hover:bg-gray-200">Sejarah Sekolah</a></li>
+              <li><a href="sarana-prasarana.html" class="block px-4 py-2 hover:bg-gray-200">Sarana Prasarana</a></li>
+              <li><a href="prestasi_sekolah.html" class="block px-4 py-2 hover:bg-gray-200">Prestasi Sekolah</a></li>
+              <li><a href="Ekstrakurikuler.html" class="block px-4 py-2 hover:bg-gray-200">Ekstrakurikuler</a></li>
+            </ul>
+          </li>
+          <li><a href="sambutan.html" class="hover:underline">SAMBUTAN KEPALA SEKOLAH</a></li>
+          <li><a href="struktur-organisasi.html" class="hover:underline">STRUKTUR ORGANISASI</a></li>
+          <li><a href="visi-misi.html" class="hover:underline">VISI MISI</a></li>
+          <li><a href="galeri-kegiatan.html" class="hover:underline">GALERI KEGIATAN</a></li>
+          <li><a href="berita.html" class="hover:underline">BERITA</a></li>
+        </ul>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div x-show="mobileOpen" x-cloak x-transition class="md:hidden w-full bg-blue-600 mt-2 rounded shadow text-sm">
+        <ul class="text-white px-4 py-2 space-y-2">
+          <li><a href="sejarah.html" class="block hover:underline">Sejarah Sekolah</a></li>
+          <li><a href="sarana-prasarana.html" class="block hover:underline">Sarana Prasarana</a></li>
+          <li><a href="prestasi_sekolah.html" class="block hover:underline">Prestasi Sekolah</a></li>
+          <li><a href="Ekstrakurikuler.html" class="block hover:underline">Ekstrakurikuler</a></li>
+          <li><a href="sambutan.html" class="block hover:underline">Sambutan Kepala Sekolah</a></li>
+          <li><a href="struktur-organisasi.html" class="block hover:underline">Struktur Organisasi</a></li>
+          <li><a href="visi-misi.html" class="block hover:underline">Visi Misi</a></li>
+          <li><a href="galeri-kegiatan.html" class="block hover:underline">Galeri Kegiatan</a></li>
+          <li><a href="berita.html" class="block hover:underline">Berita</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+ <section class="pt-[80px] md:pt-[100px] lg:pt-[64px] bg-white naikkan-banner-mobile">
+  <img src="banner.png" alt="Banner" class="w-full h-auto object-cover">
+</section>
+
+
+
+
+<!-- Section Visi Misi dengan Background Biru -->
+<section class="bg-blue-900 text-white py-12 mt-0">
+  <div class="max-w-5xl mx-auto px-4 text-center" data-aos="fade-down" data-aos-duration="1000" data-aos-once="false">
+    <h2 class="text-2xl sm:text-4xl font-bold mb-2">SAMBUTAN KEPALA SEKOLAH</h2>
+    <h3 class="text-lg sm:text-xl mb-4">SMA Negeri 1 Bengkulu Tengah</h3>
+    <p class="text-sm sm:text-base max-w-md sm:max-w-2xl mx-auto mb-10">
+      Halaman ini memuat sambutan Kepala SMA Negeri 1 Bengkulu Tengah yang berisi
+      harapan dan komitmen dalam membentuk siswa yang unggul, beriman, dan tangguh di era globalisasi.
+    </p>
+  </div>
+</section>
+
+
+  <!-- Sambutan Kepala Sekolah Responsive -->
+<section class="bg-blue-900 text-white py-2">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-10 mt-[4px]">
+    <div class="flex flex-col md:flex-row justify-center items-center mb-8">
+
+      <!-- Box Sambutan -->
+      <section class="text-black w-full sm:w-auto rounded-2xl mt-3">
+        <div 
+          class="bg-white rounded-2xl p-4 sm:p-6 lg:p-8 w-full max-w-[95%] sm:max-w-[90%] md:max-w-[650px] mx-auto"
+          data-aos="fade-up"
+          data-aos-duration="1000">
+
+          <!-- Gambar & Nama -->
+         <div class="flex flex-col items-center mb-6 text-center">
+  <img src="Ibu Puji.png" alt="Kepala Sekolah"
+       class="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-60 lg:h-60 object-contain rounded-full">
+  <p class="mt-2 text-base sm:text-lg font-semibold">Puji Hartati, M.Pd.Mat</p>
+</div>
+
+
+          <!-- Judul -->
+          <h1 class="text-lg sm:text-xl lg:text-2xl font-bold mb-4 text-center">Sambutan Kepala Sekolah</h1>
+
+          <!-- Isi Sambutan -->
+          <div class="text-justify text-sm sm:text-base lg:text-lg leading-relaxed px-1 sm:px-2 lg:px-0">
+            <p class="mb-4">Assalamualaikum wr.wb</p>
+            <p class="mb-4">
+              Puji syukur kepada Tuhan YME, atas berkat dan karuniaNya sehingga website
+              SMANSA Bengkulu Tengah telah aktif sebagai sarana informasi dan komunikasi sekolah dengan peserta 
+              didik, guru, pemerhati sekolah, orang tua siswa dan juga masyarakat. Untuk itu saya mengucapkan banyak 
+              terima kasih kepada semua pihak yang mendukung diaktifkannya kembali website ini, terutama kepada Tim IT,
+              Bapak/Ibu Dewan guru, staf Tata Usaha dan juga semua pihak yang tidak dapat saya sebutkan satu per satu.
+            </p>
+            <p class="mb-4">Puji Hartati, M.Pd.Mat</p>
+            <p class="mb-4">
+              Di era global dan pesatnya Teknologi Informasi ini, tidak dipungkiri bahwa keberadaan sebuah website untuk suatu instansi seperti halnya di SMA N 1 Bengkulu Tengah sangatlah penting. Melalui media informasi berbasis website tersebut dapat digunakan sebagai sarana informasi dan komunikasi pihak sekolah dengan siswa, alumni, dan stake holder secara luas. Selain itu juga website juga dapat menjadi sarana promosi sekolah yang cukup efektif. Berdasarkan hal tersebut saya berharap nantinya berbagai kegiatan positif sekolah baik ekstrakurikuler dan intrakurikuler dapat selalu diunggah melalui website ini.
+            </p>
+            <p class="mb-4">
+              Akhirnya kami mengharapkan masukan dari berbagai pihak untuk website ini agar kami terus belajar dan meng-update diri, sehingga tampilan, isi dan mutu website akan terus berkembang dan lebih baik nantinya sekaligus dapat dimanfaatkan oleh siswa sebagai sumber belajar dan informasi.
+            </p>
+            <p>Wassalamualaikum wr.wb</p>
+          </div>
+
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+
+            
+              <!-- AOS Library JS -->
+              <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+              <script>
+                AOS.init();
+              </script>
+</body>
+</html>

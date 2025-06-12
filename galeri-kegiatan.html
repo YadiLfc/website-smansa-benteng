@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SMA Negeri 1 Bengkulu Tengah</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"> <!-- CSS AOS -->
+  <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script> 
+ <style>
+    [x-cloak] { display: none !important; }
+
+    @media (max-width: 767px) {
+      .geser-kanan-mobile {
+        margin-left: 3rem;
+      }
+      .naikkan-banner-mobile {
+        padding-top: 120px !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <nav class="bg-blue-700 text-white fixed top-0 left-0 w-full z-50 shadow" x-data="{ mobileOpen: false }">
+    <div class="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between px-4 py-2">
+      
+      <!-- Logo SMA -->
+      <div class="flex items-center space-x-3">
+        <img src="logo sma.png" alt="Logo SMA" class="h-12 w-12 object-contain" />
+        <div class="leading-tight">
+          <p class="text-lg font-bold">SMA Negeri 1 Bengkulu Tengah</p>
+          <p class="text-sm">Official Website</p>
+        </div>
+      </div>
+
+      <!-- Logo GLO + Menu -->
+      <div class="flex items-center space-x-4 mt-2 md:mt-0 lg:-ml-16 w-full md:w-auto">
+
+        <!-- Logo GLO -->
+        <a href="berita.html">
+          <img src="Glo.png" alt="Glo" class="h-12 object-contain" />
+        </a>
+
+        <!-- Hamburger button - mobile only -->
+        <button @click="mobileOpen = !mobileOpen" class="md:hidden focus:outline-none">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex space-x-4 text-sm">
+          <li class="relative" x-data="{ open: false }">
+            <a href="#" @click.prevent="open = !open" class="cursor-pointer flex items-center">
+              PROFIL
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+            <ul x-show="open" @click.away="open = false" x-cloak x-transition
+              class="absolute bg-white text-black mt-2 rounded shadow w-48 z-50">
+              <li><a href="sejarah.html" class="block px-4 py-2 hover:bg-gray-200">Sejarah Sekolah</a></li>
+              <li><a href="sarana-prasarana.html" class="block px-4 py-2 hover:bg-gray-200">Sarana Prasarana</a></li>
+              <li><a href="prestasi_sekolah.html" class="block px-4 py-2 hover:bg-gray-200">Prestasi Sekolah</a></li>
+              <li><a href="Ekstrakurikuler.html" class="block px-4 py-2 hover:bg-gray-200">Ekstrakurikuler</a></li>
+            </ul>
+          </li>
+          <li><a href="sambutan.html" class="hover:underline">SAMBUTAN KEPALA SEKOLAH</a></li>
+          <li><a href="struktur-organisasi.html" class="hover:underline">STRUKTUR ORGANISASI</a></li>
+          <li><a href="visi-misi.html" class="hover:underline">VISI MISI</a></li>
+          <li><a href="galeri-kegiatan.html" class="hover:underline">GALERI KEGIATAN</a></li>
+          <li><a href="berita.html" class="hover:underline">BERITA</a></li>
+        </ul>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div x-show="mobileOpen" x-cloak x-transition class="md:hidden w-full bg-blue-600 mt-2 rounded shadow text-sm">
+        <ul class="text-white px-4 py-2 space-y-2">
+          <li><a href="sejarah.html" class="block hover:underline">Sejarah Sekolah</a></li>
+          <li><a href="sarana-prasarana.html" class="block hover:underline">Sarana Prasarana</a></li>
+          <li><a href="prestasi_sekolah.html" class="block hover:underline">Prestasi Sekolah</a></li>
+          <li><a href="Ekstrakurikuler.html" class="block hover:underline">Ekstrakurikuler</a></li>
+          <li><a href="sambutan.html" class="block hover:underline">Sambutan Kepala Sekolah</a></li>
+          <li><a href="struktur-organisasi.html" class="block hover:underline">Struktur Organisasi</a></li>
+          <li><a href="visi-misi.html" class="block hover:underline">Visi Misi</a></li>
+          <li><a href="galeri-kegiatan.html" class="block hover:underline">Galeri Kegiatan</a></li>
+          <li><a href="berita.html" class="block hover:underline">Berita</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+ <section class="pt-[80px] md:pt-[100px] lg:pt-[64px] bg-white naikkan-banner-mobile">
+  <img src="banner.png" alt="Banner" class="w-full h-auto object-cover">
+</section>
+
+
+
+
+
+
+
+<!-- Prestasi Sekolah (Dengan AOS) -->
+<section class="bg-blue-900 text-white py-10">
+  <div class="container mx-auto px-4">
+
+  <!-- Header -->
+<div class="flex flex-col items-center gap-4 mb-10" data-aos="fade-up">
+  <h2 class="text-3xl font-bold text-white text-center">
+    GALERI & VIDEO KEGIATAN<br class="block md:hidden"/> SEKOLAH
+  </h2>
+
+  <p class="text-white text-center max-w-xl mx-auto scroll-trigger leading-relaxed">
+  Dokumentasi foto dan video berbagai aktivitas di SMA Negeri 1 Bengkulu Tengah, 
+  mencakup kegiatan akademik, lomba, ekstrakurikuler,<br>
+  dan momen penting <span class="block">lainnya.</span>
+</p>
+
+</div>
+
+
+
+
+<section class="bg-gray-100 py-10 px-4">
+  
+ <!-- Cards Grid -->
+<div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
+
+  <!-- Card 1 -->
+  <div class="bg-white text-gray-800 rounded shadow-lg overflow-hidden w-full max-w-[350px]" 
+    data-aos="fade-right" data-aos-delay="100">
+    <img src="g1.jpeg" class="w-full object-contain object-top">
+    <div class="p-4">
+      <h3 class="font-semibold text-lg">SENAM SEHAT</h3>
+            <p class="text-sm mt-2">
+              Kegiatan rutin yang bertujuan untuk menjaga kebugaran fisik dan
+              meningkatkan semangat siswa serta guru melalui gerakan senam
+              bersama di halaman sekolah.
+            </p>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="bg-white text-gray-800 rounded shadow-lg overflow-hidden w-full max-w-[350px]"
+    data-aos="fade-right" data-aos-delay="100">
+    <img src="g2.jpeg" class="w-full object-contain object-top">
+    <div class="p-4">
+    <h3 class="font-semibold text-lg">KEBERSIHAN LINGKUNGAN KELAS</h3>
+            <p class="text-sm mt-2">
+              Upaya gotong royong siswa dalam menjaga kebersihan dan kerapian
+              ruang kelas serta sekitarnya guna menciptakan lingkungan belajar
+              yang nyaman dan sehat.
+            </p>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="bg-white text-gray-800 rounded shadow-lg overflow-hidden w-full max-w-[350px]"
+    data-aos="fade-right" data-aos-delay="100">
+    <img src="g3.jpeg" class="w-full object-contain object-top">
+    <div class="p-4">
+       <h3 class="font-semibold text-lg">ASBK 2025</h3>
+            <p class="text-sm mt-2">
+              Pelaksanaan Asesmen Sumatif Berbasis Komputer tahun 2025 yang diikuti
+              oleh seluruh siswa sebagai bagian dari evaluasi pembelajaran berbasis
+              digital di sekolah.
+            </p>
+    </div>
+  </div>
+
+
+
+
+  <!-- Video Card 1 -->
+  <div class="scroll-trigger bg-white text-gray-800 rounded shadow-lg overflow-hidden w-full max-w-[350px] transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+    <div class="w-full h-[200px]">
+      <iframe class="w-full h-full video-frame" src="https://www.youtube.com/embed/Q2xi4BuGQRA" title="Video 1" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="p-4">
+      <h3 class="font-semibold text-lg">Upacara Peringatan Hari Pahlawan 2024</h3>
+      <p class="text-sm mt-2">Upacara untuk mengenang dan menghormati jasa para pahlawan bangsa.</p>
+    </div>
+  </div>
+
+  <!-- Video Card 2 -->
+  <div class="scroll-trigger bg-white text-gray-800 rounded shadow-lg overflow-hidden w-full max-w-[350px] transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+    <div class="w-full h-[200px]">
+      <iframe class="w-full h-full" src="https://www.youtube.com/embed/pTdmvjdLkGI" title="Video 2" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="p-4">
+      <h3 class="font-semibold text-lg">SMANSA BT EXPO TAHUN 2024</h3>
+      <p class="text-sm mt-2">Pameran tahunan yang menampilkan kreativitas dan prestasi siswa SMA Negeri 1 Bengkulu Tengah.</p>
+    </div>
+  </div>
+
+  <!-- Video Card 3 -->
+  <div class="scroll-trigger bg-white text-gray-800 rounded shadow-lg overflow-hidden w-full max-w-[350px] transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+    <div class="w-full h-[200px]">
+      <iframe class="w-full h-full" src="https://www.youtube.com/embed/lPhisr_iCB4" title="Video 3" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="p-4">
+      <h3 class="font-semibold text-lg">Kegiatan ASA SBK 2025</h3>
+      <p class="text-sm mt-2">Aktivitas seni budaya dan keterampilan yang digelar sebagai bagian dari program ASA SBK tahun 2025.</p>
+    </div>
+  </div>
+
+</div>
+
+
+
+<!-- AOS Script -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: false // hanya muncul sekali saat scroll pertama
+  });
+</script>
+
+</body>
+</html>

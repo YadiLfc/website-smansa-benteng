@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMA Negeri 1 Bengkulu Tengah</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script> 
+   <style>
+    [x-cloak] { display: none !important; }
+
+    @media (max-width: 767px) {
+      .geser-kanan-mobile {
+        margin-left: 3rem;
+      }
+      .naikkan-banner-mobile {
+        padding-top: 120px !important;
+      }
+    }
+  </style>
+</head>
+
+ 
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <nav class="bg-blue-700 text-white fixed top-0 left-0 w-full z-50 shadow" x-data="{ mobileOpen: false }">
+    <div class="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between px-4 py-2">
+      
+      <!-- Logo SMA -->
+      <div class="flex items-center space-x-3">
+        <img src="logo sma.png" alt="Logo SMA" class="h-12 w-12 object-contain" />
+        <div class="leading-tight">
+          <p class="text-lg font-bold">SMA Negeri 1 Bengkulu Tengah</p>
+          <p class="text-sm">Official Website</p>
+        </div>
+      </div>
+
+      <!-- Logo GLO + Menu -->
+      <div class="flex items-center space-x-4 mt-2 md:mt-0 lg:-ml-16 w-full md:w-auto">
+
+        <!-- Logo GLO -->
+        <a href="berita.html">
+          <img src="Glo.png" alt="Glo" class="h-12 object-contain" />
+        </a>
+
+        <!-- Hamburger button - mobile only -->
+        <button @click="mobileOpen = !mobileOpen" class="md:hidden focus:outline-none">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex space-x-4 text-sm">
+          <li class="relative" x-data="{ open: false }">
+            <a href="#" @click.prevent="open = !open" class="cursor-pointer flex items-center">
+              PROFIL
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+            <ul x-show="open" @click.away="open = false" x-cloak x-transition
+              class="absolute bg-white text-black mt-2 rounded shadow w-48 z-50">
+              <li><a href="sejarah.html" class="block px-4 py-2 hover:bg-gray-200">Sejarah Sekolah</a></li>
+              <li><a href="sarana-prasarana.html" class="block px-4 py-2 hover:bg-gray-200">Sarana Prasarana</a></li>
+              <li><a href="prestasi_sekolah.html" class="block px-4 py-2 hover:bg-gray-200">Prestasi Sekolah</a></li>
+              <li><a href="Ekstrakurikuler.html" class="block px-4 py-2 hover:bg-gray-200">Ekstrakurikuler</a></li>
+            </ul>
+          </li>
+          <li><a href="sambutan.html" class="hover:underline">SAMBUTAN KEPALA SEKOLAH</a></li>
+          <li><a href="struktur-organisasi.html" class="hover:underline">STRUKTUR ORGANISASI</a></li>
+          <li><a href="visi-misi.html" class="hover:underline">VISI MISI</a></li>
+          <li><a href="galeri-kegiatan.html" class="hover:underline">GALERI KEGIATAN</a></li>
+          <li><a href="berita.html" class="hover:underline">BERITA</a></li>
+        </ul>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div x-show="mobileOpen" x-cloak x-transition class="md:hidden w-full bg-blue-600 mt-2 rounded shadow text-sm">
+        <ul class="text-white px-4 py-2 space-y-2">
+          <li><a href="sejarah.html" class="block hover:underline">Sejarah Sekolah</a></li>
+          <li><a href="sarana-prasarana.html" class="block hover:underline">Sarana Prasarana</a></li>
+          <li><a href="prestasi_sekolah.html" class="block hover:underline">Prestasi Sekolah</a></li>
+          <li><a href="Ekstrakurikuler.html" class="block hover:underline">Ekstrakurikuler</a></li>
+          <li><a href="sambutan.html" class="block hover:underline">Sambutan Kepala Sekolah</a></li>
+          <li><a href="struktur-organisasi.html" class="block hover:underline">Struktur Organisasi</a></li>
+          <li><a href="visi-misi.html" class="block hover:underline">Visi Misi</a></li>
+          <li><a href="galeri-kegiatan.html" class="block hover:underline">Galeri Kegiatan</a></li>
+          <li><a href="berita.html" class="block hover:underline">Berita</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+ <section class="pt-[80px] md:pt-[100px] lg:pt-[64px] bg-white naikkan-banner-mobile">
+  <img src="banner.png" alt="Banner" class="w-full h-auto object-cover">
+</section>
+
+
+<!-- Struktur Organisasi -->
+<section class="bg-blue-900 text-white py-12 mt-0">
+  <div class="max-w-5xl mx-auto px-4" data-aos="fade-down" data-aos-duration="1000" data-aos-once="false">
+    <h2 class="text-4xl font-bold mb-2 text-center">STRUKTUR ORGANISASI</h2>
+    <h3 class="text-xl mb-4 text-center">SMA Negeri 1 Bengkulu Tengah</h3>
+    <p class="text-center max-w-2xl mx-auto mb-10">
+      Halaman ini menjelaskan tentang susunan jabatan, tanggung jawab, serta peran setiap bagian dalam mendukung kelancaran operasional sekolah. 
+      Struktur yang jelas dan terorganisir sangat penting untuk memastikan koordinasi yang efektif antara seluruh komponen yang ada di sekolah.
+    </p>
+  </div>
+</section>
+
+<!-- Tabel Struktur Organisasi -->
+<section class="bg-blue-900 text-white py-45 mt-0">
+  <div class="bg-white p-10 rounded-lg shadow-lg max-w-4xl mx-auto overflow-x-auto" data-aos="fade-up">
+    <table class="w-full text-base text-center table-auto border border-gray-300 leading-tight">
+      <thead class="bg-gray-200 text-gray-800 text-lg">
+        <tr>
+          <th class="border px-2 py-2">No</th>
+          <th class="border px-2 py-2">Nama</th>
+          <th class="border px-2 py-2">Jabatan</th>
+          <th class="border px-2 py-2">Foto</th>
+        </tr>
+      </thead>
+      <tbody class="text-gray-800">
+        <tr class="animate-up">
+          <td class="border px-2 py-2">1</td>
+          <td class="border px-2 py-2">Puji Hartati, M.Pd, Mat.</td>
+          <td class="border px-2 py-2">Kepala Sekolah</td>
+          <td class="border px-2 py-2">
+            <img src="Ibu Puji.png" alt="Foto Puji Hartati" class="w-16 h-30 object-cover mx-auto">
+          </td>
+        </tr>
+        <tr class="animate-up">
+          <td class="border px-2 py-2">2</td>
+          <td class="border px-2 py-2">Haryantoni, M.Pd</td>
+          <td class="border px-2 py-2">Waka Kurikulum</td>
+          <td class="border px-2 py-2">
+            <img src="pak toni.jpeg" alt="Foto Haryantoni" class="w-16 h-20 object-cover mx-auto">
+          </td>
+        </tr>
+        <tr class="animate-up">
+          <td class="border px-2 py-2">3</td>
+          <td class="border px-2 py-2">Hasnur Yakin, S.H</td>
+          <td class="border px-2 py-2">Waka Kesiswaan</td>
+          <td class="border px-2 py-2">
+            <img src="pak yakin.jpeg" alt="Foto Hasnur Yakin" class="w-16 h-20 object-cover mx-auto">
+          </td>
+        </tr>
+        <tr class="animate-up">
+          <td class="border px-2 py-2">4</td>
+          <td class="border px-2 py-2">Gunardi, M.Pd</td>
+          <td class="border px-2 py-2">Waka Sarpras</td>
+          <td class="border px-2 py-2">
+            <img src="pak gun.jpeg" alt="Foto Gunardi" class="w-16 h-20 object-cover mx-auto">
+          </td>
+        </tr>
+        <tr class="animate-up">
+          <td class="border px-2 py-2">5</td>
+          <td class="border px-2 py-2">Paulina, S.E</td>
+          <td class="border px-2 py-2">Waka Humas</td>
+          <td class="border px-2 py-2">
+            <img src="ibu pau.jpeg" alt="Foto Paulina" class="w-16 h-20 object-cover mx-auto">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Tambahan ruang navy di bawah tabel -->
+  <div class="h-16 bg-blue-900"></div>
+</section>
+
+
+<!-- Script AOS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    easing: 'ease-out',
+    once: false,
+    offset: 200,
+  });
+
+  const observerOptions = { threshold: 0.5 };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const el = entry.target;
+      if (entry.isIntersecting) {
+        el.classList.remove('hidden-slide');
+        void el.offsetWidth;
+        el.classList.add('animate-slideInRight');
+      } else {
+        el.classList.remove('animate-slideInRight');
+        el.classList.add('hidden-slide');
+      }
+    });
+  }, observerOptions);
+
+  const sectionDesc = document.getElementById('section-desc');
+  const footer = document.getElementById('footer');
+  sectionDesc.classList.add('hidden-slide');
+  footer.classList.add('hidden-slide');
+  observer.observe(sectionDesc);
+  observer.observe(footer);
+</script>
+
+</body>
+</html>
