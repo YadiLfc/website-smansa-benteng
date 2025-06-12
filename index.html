@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SMA Negeri 1 Bengkulu Tengah</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+  <style>
+    [x-cloak] { display: none !important; }
+
+    @media (max-width: 767px) {
+      .geser-kanan-mobile {
+        margin-left: 3rem;
+      }
+      .naikkan-banner-mobile {
+        padding-top: 120px !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <nav class="bg-blue-700 text-white fixed top-0 left-0 w-full z-50 shadow" x-data="{ mobileOpen: false }">
+    <div class="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between px-4 py-2">
+      
+      <!-- Logo SMA -->
+      <div class="flex items-center space-x-3">
+        <img src="logo sma.png" alt="Logo SMA" class="h-12 w-12 object-contain" />
+        <div class="leading-tight">
+          <p class="text-lg font-bold">SMA Negeri 1 Bengkulu Tengah</p>
+          <p class="text-sm">Official Website</p>
+        </div>
+      </div>
+
+      <!-- Logo GLO + Menu -->
+      <div class="flex items-center space-x-4 mt-2 md:mt-0 lg:-ml-16 w-full md:w-auto">
+
+        <!-- Logo GLO -->
+        <a href="berita.html">
+          <img src="Glo.png" alt="Glo" class="h-12 object-contain" />
+        </a>
+
+        <!-- Hamburger button - mobile only -->
+        <button @click="mobileOpen = !mobileOpen" class="md:hidden focus:outline-none">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex space-x-4 text-sm">
+          <li class="relative" x-data="{ open: false }">
+            <a href="#" @click.prevent="open = !open" class="cursor-pointer flex items-center">
+              PROFIL
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+            <ul x-show="open" @click.away="open = false" x-cloak x-transition
+              class="absolute bg-white text-black mt-2 rounded shadow w-48 z-50">
+              <li><a href="sejarah.html" class="block px-4 py-2 hover:bg-gray-200">Sejarah Sekolah</a></li>
+              <li><a href="sarana-prasarana.html" class="block px-4 py-2 hover:bg-gray-200">Sarana Prasarana</a></li>
+              <li><a href="prestasi_sekolah.html" class="block px-4 py-2 hover:bg-gray-200">Prestasi Sekolah</a></li>
+              <li><a href="eskul.html" class="block px-4 py-2 hover:bg-gray-200">Ekstrakurikuler</a></li>
+            </ul>
+          </li>
+          <li><a href="sambutan.html" class="hover:underline">SAMBUTAN KEPALA SEKOLAH</a></li>
+          <li><a href="struktur-organisasi.html" class="hover:underline">STRUKTUR ORGANISASI</a></li>
+          <li><a href="visi-misi.html" class="hover:underline">VISI MISI</a></li>
+          <li><a href="galeri-kegiatan.html" class="hover:underline">GALERI KEGIATAN</a></li>
+          <li><a href="berita.html" class="hover:underline">BERITA</a></li>
+        </ul>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div x-show="mobileOpen" x-cloak x-transition class="md:hidden w-full bg-blue-600 mt-2 rounded shadow text-sm">
+        <ul class="text-white px-4 py-2 space-y-2">
+          <li><a href="sejarah.html" class="block hover:underline">Sejarah Sekolah</a></li>
+          <li><a href="sarana-prasarana.html" class="block hover:underline">Sarana Prasarana</a></li>
+          <li><a href="prestasi_sekolah.html" class="block hover:underline">Prestasi Sekolah</a></li>
+          <li><a href="Ekstrakurikuler.html" class="block hover:underline">Ekstrakurikuler</a></li>
+          <li><a href="sambutan.html" class="block hover:underline">Sambutan Kepala Sekolah</a></li>
+          <li><a href="struktur-organisasi.html" class="block hover:underline">Struktur Organisasi</a></li>
+          <li><a href="visi-misi.html" class="block hover:underline">Visi Misi</a></li>
+          <li><a href="galeri-kegiatan.html" class="block hover:underline">Galeri Kegiatan</a></li>
+          <li><a href="berita.html" class="block hover:underline">Berita</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+ <section class="pt-[80px] md:pt-[100px] lg:pt-[64px] bg-white naikkan-banner-mobile">
+  <img src="banner.png" alt="Banner" class="w-full h-auto object-cover">
+</section>
+
+
+
+
+
+  <!-- Berita Terbaru -->
+  <section class="bg-blue-900 text-white py-2">
+    <div class="container mx-auto px-10 mt-[-1px]"> <!-- Geser ke atas dengan margin-top negatif -->
+        <div class="flex flex-col md:flex-row justify-between items-center mb-8 px-4 md:px-10">
+          <h2 class="text-3xl font-bold mb-4 md:mb-0 translate-x-2 -ml-10">Berita Terbaru</h2>     
+         <div x-data="{
+    search: '',
+    selected: 'observasi-guru',
+    show: false,
+    suggestions: [
+      'Observasi Guru',
+      'Kadis Dikbud',
+      'Ketua tim 2 substansi infokom BPOM ',
+      'Kepala sekolah pimpin upacara',
+      '100 Siswa SMANSA BT Ikuti UKBI',
+      'Waka Kesiswaan Lantik Pengurus OSIS Terpilih',
+      'Puskesmas Kembang Seri Adakan Penjaringan Kesehatan',
+      '2 Paslon Ketua dan Wakil Ketua OSIS Adu Visi Misi',
+      'SMANSA BT Launching Genta'
+    ],
+    filtered() {
+      return this.suggestions.filter(s => s.toLowerCase().includes(this.search.toLowerCase()));
+    },
+    select(item) {
+      this.search = item;
+      this.selected = this.slugify(item);
+      this.show = false;
+      this.scrollToSelected();
+    },
+    checkSearch() {
+      let match = this.suggestions.find(s => s.toLowerCase() === this.search.toLowerCase());
+      if (match) {
+        this.selected = this.slugify(match);
+        this.scrollToSelected();
+      } else {
+        this.selected = '';
+      }
+    },
+    handleEnter() {
+      this.checkSearch();
+      this.show = false;
+    },
+    slugify(text) {
+      return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+    },
+    scrollToSelected() {
+      this.$nextTick(() => {
+        const element = document.getElementById(this.selected);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          element.classList.add('ring', 'ring-blue-400');
+          setTimeout(() => {
+            element.classList.remove('ring', 'ring-blue-400');
+          }, 2000);
+        }
+      });
+    }
+}" class="relative w-full md:w-1/2 mr-0 md:mr-[200px] mt-4 px-4">
+
+            <!-- Input -->
+            <input
+              x-model="search"
+              @input="show = true"
+              @keydown.enter.prevent="handleEnter()"
+              type="text"
+              placeholder="Apa yang ingin anda cari?"
+              class="w-full px-4 py-2  rounded-full border border-gray-300 text-black focus:outline-none focus:ring-2 focus:ring-blue-400"
+              style="background-image: url('search.png'); background-repeat: no-repeat; background-position: right 0.75rem center; background-size: 30px 30px;"
+            >
+          
+            <!-- Suggestion List -->
+         <ul x-show="show && filtered().length > 0" class="absolute bg-white shadow-md mt-1 w-full rounded-lg z-20">
+  <template x-for="item in filtered()" :key="item">
+    <li 
+      @click="select(item)" 
+      class="px-4 py-2 hover:bg-gray-200 cursor-pointer text-black" 
+      x-text="item">
+    </li>
+  </template>
+</ul>
+
+          
+            <!-- Tambahkan class relative di div -->
+<div class="relative hidden md:block">
+
+  <a href="https://www.instagram.com/sman1bengkulutengah/" target="_blank"
+     class="absolute right-0 bottom-[-1px] -mr-[105px]">
+    <img src="ig.png" alt="instagram" class="h-10 transition-transform duration-300 hover:scale-110">
+  </a>
+
+  <a href="https://www.tiktok.com/@smansabenteng" target="_blank"
+     class="absolute right-0 bottom-[-1px] -mr-[150px]">
+    <img src="tiktok.png" alt="tiktok" class="h-10 transition-transform duration-300 hover:scale-110">
+  </a>
+
+  <a href="http://www.youtube.com/@smanegeri1bengkulutengah359" target="_blank"
+     class="absolute right-0 bottom-[-1px] -mr-[195px]">
+    <img src="yt.png" alt="YouTube" class="h-10 transition-transform duration-300 hover:scale-110">
+  </a>
+
+  <a href="https://www.facebook.com/share/1QQreXgUMf/" target="_blank"
+     class="absolute right-0 bottom-[-1px] -mr-[240px]">
+    <img src="facebook logo.png" alt="facebook" class="h-10 transition-transform duration-300 hover:scale-110">
+  </a>
+
+</div>
+
+
+<div class="flex justify-center gap-4 mt-4 md:hidden" style="transform: translateX(-12px);">
+  <a href="https://www.instagram.com/sman1bengkulutengah/" target="_blank">
+    <img src="ig.png" alt="instagram" class="h-8 transition-transform duration-300 hover:scale-110">
+  </a>
+  <a href="https://www.tiktok.com/@smansabenteng" target="_blank">
+    <img src="tiktok.png" alt="tiktok" class="h-8 transition-transform duration-300 hover:scale-110">
+  </a>
+  <a href="http://www.youtube.com/@smanegeri1bengkulutengah359" target="_blank">
+    <img src="yt.png" alt="YouTube" class="h-8 transition-transform duration-300 hover:scale-110">
+  </a>
+  <a href="https://www.facebook.com/share/1QQreXgUMf/" target="_blank">
+    <img src="facebook logo.png" alt="facebook" class="h-8 transition-transform duration-300 hover:scale-110">
+  </a>
+</div>
+
+
+
+
+
+              <ul
+                x-show="show && search"
+                class="absolute z-10 bg-white text-black w-full mt-1 rounded-md shadow-md"
+              >
+                <template x-for="item in filtered()" :key="item">
+                  <li
+                    @click="select(item)"
+
+                    class="px-4 py-2 hover:bg-blue-100 cursor-pointer"
+                    x-text="item"
+                  ></li>
+                </template>
+                <li x-show="filtered().length === 0" class="px-4 py-2 text-gray-500">Tidak ditemukan</li>
+              </ul>
+            </div>
+            
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <!-- Berita 1 -->
+<div id="observasi-guru" class="bg-white text-black shadow-md rounded-lg overflow-hidden">
+  <img src="gambar1.jpg" alt="Berita 1" class="w-full h-40 object-cover">
+  <div class="p-4">
+    <h3 class="text-lg font-bold">
+      Observasi Guru: Evaluasi dan Peningkatan Kualitas Pengajaran di SMA Negeri 1 Bengkulu Tengah
+    </h3>
+    <p class="text-sm text-gray-600">8 November 2024 | Admin</p>
+    <p class="mt-2 text-sm text-gray-700">
+      Observasi guru menjadi salah satu metode penting dalam dunia pendidikan untuk mengevaluasi kinerja
+       pengajaran serta meningkatkan kualitas pembelajaran di sekolah..
+    </p>
+    <a href="ReadMore.html" class="text-blue-600 text-sm font-semibold hover:underline mt-2 inline-block">Read More</a>
+  </div>
+</div>
+
+          
+            <!-- Berita 2 -->
+            <div id="kadis-dikbud" class="bg-white text-black shadow-md rounded-lg overflow-hidden">
+              <img src="gambar2.jpg" alt="Berita 2" class="w-full h-40 object-cover">
+              <div class="p-4">
+                <h3 class="text-lg font-bold">Kadis Dikbud Hadiri Sosialisasi Antisipasi Kenakalan Remaja 
+                  SMA Negeri 1 Bengkulu Tengah</h3>
+                <p class="text-sm text-gray-600">4 November 2024 | Admin</p>
+                <p class="mt-2 text-sm text-gray-700">
+                  Kepala Dinas Dikbud Provinsi Bengkulu Bapak Saidirman, S.E., M.Si. hadiri Sosialiasi Antisipasi 
+                  Kenakalan Remaja dan 
+                  Rencana Program Kelas XII SMA.
+                </p>
+                <a href="#" class="text-blue-600 text-sm font-semibold hover:underline mt-2 inline-block">Read More</a>
+              </div>
+            
+            </div>
+          
+            <!-- Berita 3 -->
+            <div id="ketua-tim-2-substansi-infokom-bpom" class="bg-white text-black shadow-md rounded-lg overflow-hidden">
+              <img src="gambar3.jpg" alt="Berita 3" class="w-full h-40 object-cover">
+              <div class="p-4">
+                <h3 class="text-lg font-bold">Ketua Tim 2 Substansi Infokom BPOM Berikan Materi BPOM Mengajar di SMA Negeri 1 Bengkulu Tengah</h3>
+                <p class="text-sm text-gray-600">23 Oktober 2024 | Admin</p>
+                <p class="mt-2 text-sm text-gray-700">
+                  SMA Negeri 1 Bengkulu Tengah berkesempatan menjadi peserta BPOM Mengajar dari BPOM Bengkulu, Rabu, 23 Oktober 2024 di Aula Oryza.
+                </p>
+                <a href="#" class="text-blue-600 text-sm font-semibold hover:underline mt-2 inline-block">Read More</a>
+              </div>
+            </div>
+          
+            <!-- Berita 4 -->
+            <div id="kepala-sekolah-pimpin-upacara" class="bg-white text-black shadow-md rounded-lg overflow-hidden">
+              <img src="gambar4.jpg" alt="Berita 4" class="w-full h-40 object-cover">
+              <div class="p-4">
+                <h3 class="text-lg font-bold">Kepala Sekolah Pimpin Upacara Peringatan Hari Kesaktian Pancasila</h3>
+                <p class="text-sm text-gray-600">1 Oktober 2024 | Admin</p>
+                <p class="mt-2 text-sm text-gray-700">
+                  Upacara Peringatan Hari Kesaktian Pancasila berlangsung khidmat dengan Petugas dari OSIS dan Tim Paduan Suara.
+                  Dalam amanatnya, Inspektur Upacara yang.
+                </p>
+                <a href="#" class="text-blue-600 text-sm font-semibold hover:underline mt-2 inline-block">Read More</a>
+              </div>
+            </div>
+          
+            <!-- Berita 5 -->
+            <div id="100-siswa-smansa-bt-ikuti-ukbi" class="bg-white text-black shadow-md rounded-lg overflow-hidden">
+              <img src="gambar5.jpg" alt="Berita 5" class="w-full h-40 object-cover">
+              <div class="p-4">
+                <h3 class="text-lg font-bold">100 Siswa SMANSA BT Ikuti UKBI</h3>
+                <p class="text-sm text-gray-600">25 September 2024 | Admin</p>
+                <p class="mt-2 text-sm text-gray-700">
+                  100 siswa Peserta Uji Kemahiran Berbahasa Indonesia (UKBI) 2024 melaksanakan
+                  ujian secara online di 4 ruangan, Selasa, 24 September 2024..
+                </p>
+                <a href="#" class="text-blue-600 text-sm font-semibold hover:underline mt-2 inline-block">Read More</a>
+              </div>
+            </div>
+          
+            <!-- Berita 6 -->
+            <div id="waka-kesiswaan-lantik-pengurus-osis-terpilih" class="bg-white text-black shadow-md rounded-lg overflow-hidden">
+              <img src="gambar6.jpg" alt="Berita 6" class="w-full h-40 object-cover">
+              <div class="p-4">
+                <h3 class="text-lg font-bold">Waka Kesiswaan Lantik Pengurus OSIS Terpilih</h3>
+                <p class="text-sm text-gray-600">23 September 2024 | Admin</p>
+                <p class="mt-2 text-sm text-gray-700">
+                  Upacara Bendera Senin, 23 September 2024 berjalan baik dan lancar dengan petugas
+                  dari kelas X I, pengibar bendera dari Paskib.
+                </p>
+                <a href="#" class="text-blue-600 text-sm font-semibold hover:underline mt-2 inline-block">Read More</a>
+              </div>
+            </div>
+          
+            <!-- Berita 7 -->
+            <div id="puskesmas-kembang-seri-adakan-penjaringan-kesehatan" class="bg-white text-black shadow-md rounded-lg overflow-hidden">
+              <img src="gambar7.jpg" alt="Berita 7" class="w-full h-40 object-cover">
+              <div class="p-4">
+                <h3 class="text-lg font-bold">Puskesmas Kembang Seri Adakan Penjaringan Kesehatan</h3>
+                <p class="text-sm text-gray-600">17 September 2024 | Admin</p>
+                <p class="mt-2 text-sm text-gray-700">
+                  Puskesmas Kembang Seri mengadakan Penjaringan Kesehatan Berkala, Selasa, 17 September 2024. 
+                  Kegiatan ini mendata berat badan, tinggi badan, kesehatan mata,.
+                </p>
+                <a href="#" class="text-blue-600 text-sm font-semibold hover:underline mt-2 inline-block">Read More</a>
+              </div>
+            </div>
+          
+            <!-- Berita 8 -->
+            <div id="2-paslon-ketua-dan-wakil-ketua-osis-adu-visi-misi" class="bg-white text-black shadow-md rounded-lg overflow-hidden">
+              <img src="gambar8.jpg" alt="Berita 8" class="w-full h-40 object-cover">
+              <div class="p-4">
+                <h3 class="text-lg font-bold">2 Paslon Ketua dan Wakil Ketua OSIS Adu Visi Misi</h3>
+                <p class="text-sm text-gray-600">5 September 2024 | Admin</p>
+                <p class="mt-2 text-sm text-gray-700">
+                  OSIS dan Fasilitator P5 Kelas XI melaksanakan Debat Terbuka Pemilihan Calon Ketua dan Wakil Ketua OSIS SMAN 1 Bengkulu Tengah.
+                </p>
+                <a href="#" class="text-blue-600 text-sm font-semibold hover:underline mt-2 inline-block">Read More</a>
+              </div>
+            </div>
+          
+            <!-- Berita 9 -->
+            <div id="smansa-bt-launching-genta" class="bg-white text-black shadow-md rounded-lg overflow-hidden">
+              <img src="gambar9.jpg" alt="Berita 9" class="w-full h-40 object-cover">
+              <div class="p-4">
+                <h3 class="text-lg font-bold">SMANSA BT Launching Genta</h3>
+                <p class="text-sm text-gray-600">30 Agustus 2024 | Admin</p>
+                <p class="mt-2 text-sm text-gray-700">
+                  Kepala Sekolah SMAN 1 Bengkulu Tengah Ibu Puji Hartati, M.Pd.Mat. 
+                  resmikan launching Program Genta – Gerakan Cinta Alquran SMANSA di.
+                </p>
+                <a href="#" class="text-blue-600 text-sm font-semibold hover:underline mt-2 inline-block">Read More</a>
+              </div>
+            </div>
+          </div>   
+
+ <!-- Denah Lokasi & Kontak -->
+<section class="bg-white py-10 text-black" style="margin-top: 40px;">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Denah Lokasi -->
+    <div class="ml-4 pr-2 md:pr-0"> <!-- pr-2 hanya untuk mobile, md:pr-0 untuk reset di desktop -->
+      <h1 class="text-xl font-semibold mb-2">Denah Lokasi</h1>
+      <img src="lokasi.png" alt="Denah Lokasi" class="w-full rounded shadow-md bg-white">
+    </div>
+
+    <!-- Kontak -->
+    <div class="pl-4 md:pl-0"> <!-- padding kiri hanya di mobile -->
+      <h3 class="text-xl font-semibold mb-4">Kontak</h3>
+
+      <div class="mb-2 flex items-start">
+        <img src="Email.png" alt="Email" class="h-6 w-6 mr-2 mt-1">
+        <div>
+          <p class="font-semibold">Email</p>
+          <p>sman1benteng@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="mb-2 flex items-start">
+        <img src="tlp.png" alt="Telepon" class="h-6 w-6 mr-2 mt-1">
+        <div>
+          <p class="font-semibold">Telepon</p>
+          <p>(0736) 7312022</p>
+        </div>
+      </div>
+
+      <div class="mb-2 flex items-start">
+        <img src="Website.png" alt="Website" class="h-6 w-6 mr-2 mt-1">
+        <div>
+          <p class="font-semibold">Website</p>
+          <p>http://www.smansabengkulutengah.sch.id</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sekarang section baru untuk Video + Address -->
+<section class="py-10 text-black bg-gray-100">
+  <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1200px]">
+    <!-- Video 1 -->
+    <div class="rounded-lg shadow-lg overflow-hidden">
+      <iframe class="w-full h-60 md:h-64"
+        src="https://www.youtube.com/embed/p_Rg1sOXxx0"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <!-- Video 2 -->
+    <div class="rounded-lg shadow-lg overflow-hidden">
+      <iframe class="w-full h-60 md:h-64"
+  src="https://www.youtube.com/embed/LszQCM2PKJg"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+  playsinline>
+</iframe>
+
+    </div>
+
+    <!-- Address & Hours -->
+    <div class="text-sm leading-relaxed p-4 bg-white rounded-lg shadow">
+      <div class="mb-4">
+        <h2 class="font-semibold text-base">Address</h2>
+        <p>
+          Jalan Raya Kembang Seri KM. 12,<br>
+          Kembang Seri, Talang Empat, Taba Pasmah,<br>
+          Bengkulu Tengah, Kabupaten Bengkulu Tengah,<br>
+          Bengkulu 38119
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-semibold text-base mb-1">Hours</h2>
+        <div class="flex items-center space-x-2">
+          <class="mr-4 mt-[-55px] mb-0">Senin – Jum’at
+          <img src="bendera.png" alt="Bendera" class="h-20 md:h-30 w-auto" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+ <!-- Deskripsi Singkat -->
+<section class="bg-blue-900 text-white py-5" id="section-desc">
+  <div class="container mx-auto px-6 flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-4">
+    <img src="logo sma.png" alt="Logo" class="h-10">
+    <div>
+      <h2 class="text-lg font-semibold">SMA Negeri 1 Bengkulu Tengah</h2>
+      <p class="text-sm mt-1 max-w-full md:max-w-2xl">
+        SMA Negeri 1 Bengkulu Tengah adalah sekolah yang berkomitmen mencetak generasi cerdas dan berkarakter.
+        Dengan fasilitas yang memadai dan pengajaran berkualitas, sekolah ini mendukung perkembangan akademik dan non-akademik siswa untuk meraih prestasi terbaik.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-blue-800 text-white text-center py-4" id="footer">
+  <p class="text-sm px-4">
+    © 2025 SMA Negeri 1 Bengkulu Tengah. Designed and Developed by <span class="font-semibold">Yadi Armeliansyah</span>. All Rights Reserved.
+  </p>
+</footer>
+
+
+<style>
+  /* Animasi slide */
+  @keyframes slideIn {
+    0% {
+      transform: translateX(100%); /* Mulai dari kanan */
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0); /* Bergerak ke posisi semula */
+      opacity: 1;
+    }
+  }
+
+  .animate-slideIn {
+    animation: slideIn 0.8s ease-in-out forwards;
+  }
+</style>
+
+<script>
+  const observerOptions = {
+    threshold: 0.5
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const el = entry.target;
+
+      if (entry.isIntersecting) {
+        // Tambahkan kelas animasi
+        el.classList.add('animate-slideIn');
+
+        // Hapus kelas animasi setelah selesai (agar bisa diulang)
+        el.addEventListener('animationend', () => {
+          el.classList.remove('animate-slideIn');
+        }, { once: true }); // hanya jalankan sekali per animasi masuk
+      }
+    });
+  }, observerOptions);
+
+  const sectionDesc = document.getElementById('section-desc');
+  const footer = document.getElementById('footer');
+
+  observer.observe(sectionDesc);
+  observer.observe(footer);
+</script>
+
+
+
+</body>
+</html>
