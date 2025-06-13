@@ -496,51 +496,7 @@
 </footer>
 
 
-<style>
-  /* Animasi slide */
-  @keyframes slideIn {
-    0% {
-      transform: translateX(100%); /* Mulai dari kanan */
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0); /* Bergerak ke posisi semula */
-      opacity: 1;
-    }
-  }
 
-  .animate-slideIn {
-    animation: slideIn 0.8s ease-in-out forwards;
-  }
-</style>
-
-<script>
-  const observerOptions = {
-    threshold: 0.5
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const el = entry.target;
-
-      if (entry.isIntersecting) {
-        // Tambahkan kelas animasi
-        el.classList.add('animate-slideIn');
-
-        // Hapus kelas animasi setelah selesai (agar bisa diulang)
-        el.addEventListener('animationend', () => {
-          el.classList.remove('animate-slideIn');
-        }, { once: true }); // hanya jalankan sekali per animasi masuk
-      }
-    });
-  }, observerOptions);
-
-  const sectionDesc = document.getElementById('section-desc');
-  const footer = document.getElementById('footer');
-
-  observer.observe(sectionDesc);
-  observer.observe(footer);
-</script>
 
 
 
